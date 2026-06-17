@@ -1,0 +1,26 @@
+{
+    "Tools": {
+        "next": [
+            "StoryMode",
+            "InstantBurst",
+            "CampaignMode"
+        ]
+    },
+    "StoryMode": {
+        "recognition": "TemplateMatch",
+        "template": "story_mode.png",
+        "action": "Click",
+        "next": ["InstantBurst"]
+    },
+    "InstantBurst": {
+        "recognition": "TemplateMatch",
+        "template": "instant_burst.png",
+        "action": "Click",
+        "next": ["CampaignMode"]
+    },
+    "CampaignMode": {
+        "recognition": "TemplateMatch",
+        "template": "campaign_mode.png",
+        "action": "Click"
+    }
+}

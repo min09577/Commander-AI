@@ -1,0 +1,301 @@
+{
+    "Daily": {
+        "next": [
+            "Login",
+            "Shop",
+            "SimulationRoom",
+            "Arena",
+            "Tower",
+            "Interception",
+            "RegularReward",
+            "OutpostDispatch"
+        ]
+    },
+    "Login": {
+        "recognition": "TemplateMatch",
+        "template": "login_shiftup_logo.png",
+        "action": "DoNothing",
+        "next": ["Shop"]
+    },
+    "Shop": {
+        "next": [
+            "ShopCash",
+            "ShopGeneral",
+            "ShopArena",
+            "ShopRecycling"
+        ]
+    },
+    "ShopCash": {
+        "recognition": "TemplateMatch",
+        "template": "shop_cash.png",
+        "roi": [0, 0, 1280, 720],
+        "action": "Click",
+        "next": [
+            "ShopCashFree",
+            "ShopCashFreePackage"
+        ]
+    },
+    "ShopCashFree": {
+        "recognition": "TemplateMatch",
+        "template": "shop_cash_free.png",
+        "action": "Click",
+        "next": ["ShopGeneral"]
+    },
+    "ShopCashFreePackage": {
+        "recognition": "TemplateMatch",
+        "template": "shop_cash_free_stepup.png",
+        "action": "Click",
+        "next": ["ShopGeneral"]
+    },
+    "ShopGeneral": {
+        "recognition": "TemplateMatch",
+        "template": "shop_general.png",
+        "action": "Click",
+        "next": [
+            "ShopGeneralFree",
+            "ShopGeneralDust",
+            "ShopGeneralPackage"
+        ]
+    },
+    "ShopGeneralFree": {
+        "recognition": "TemplateMatch",
+        "template": "shop_general_free.png",
+        "action": "Click",
+        "max_count": 2,
+        "next": ["ShopGeneralDust"]
+    },
+    "ShopGeneralDust": {
+        "recognition": "TemplateMatch",
+        "template": "shop_general_dust.png",
+        "action": "Click",
+        "next": ["ShopGeneralPackage"]
+    },
+    "ShopGeneralPackage": {
+        "recognition": "TemplateMatch",
+        "template": "shop_general_package.png",
+        "action": "Click",
+        "next": ["ShopArena"]
+    },
+    "ShopArena": {
+        "recognition": "TemplateMatch",
+        "template": "shop_arena.png",
+        "action": "Click",
+        "next": [
+            "ShopArenaBook",
+            "ShopArenaBox",
+            "ShopArenaPackage",
+            "ShopArenaFurnace"
+        ]
+    },
+    "ShopArenaBook": {
+        "recognition": "TemplateMatch",
+        "template": "shop_arena_book.png",
+        "action": "Click",
+        "next": ["ShopArenaBox"]
+    },
+    "ShopArenaBox": {
+        "recognition": "TemplateMatch",
+        "template": "shop_arena_code_box.png",
+        "action": "Click",
+        "next": ["ShopArenaPackage"]
+    },
+    "ShopArenaPackage": {
+        "recognition": "TemplateMatch",
+        "template": "shop_arena_package.png",
+        "action": "Click",
+        "next": ["ShopArenaFurnace"]
+    },
+    "ShopArenaFurnace": {
+        "recognition": "TemplateMatch",
+        "template": "shop_arena_furnace.png",
+        "action": "Click",
+        "next": ["ShopRecycling"]
+    },
+    "ShopRecycling": {
+        "recognition": "TemplateMatch",
+        "template": "shop_recycling.png",
+        "action": "Click",
+        "next": [
+            "ShopRecyclingGem",
+            "ShopRecyclingVoucher",
+            "ShopRecyclingResources",
+            "ShopRecyclingBox",
+            "ShopRecyclingArms"
+        ]
+    },
+    "ShopRecyclingGem": {
+        "recognition": "TemplateMatch",
+        "template": "shop_recycling_gem.png",
+        "action": "Click",
+        "next": ["ShopRecyclingVoucher"]
+    },
+    "ShopRecyclingVoucher": {
+        "recognition": "TemplateMatch",
+        "template": "shop_recycling_voucher.png",
+        "action": "Click",
+        "next": ["ShopRecyclingResources"]
+    },
+    "ShopRecyclingResources": {
+        "recognition": "TemplateMatch",
+        "template": "shop_recycling_resources.png",
+        "action": "Click",
+        "next": ["ShopRecyclingBox"]
+    },
+    "ShopRecyclingBox": {
+        "recognition": "TemplateMatch",
+        "template": "shop_recycling_teamwork_box.png",
+        "action": "Click",
+        "next": ["ShopRecyclingArms"]
+    },
+    "ShopRecyclingArms": {
+        "recognition": "TemplateMatch",
+        "template": "shop_recycling_arms.png",
+        "action": "Click",
+        "next": ["SimulationRoom"]
+    },
+    "SimulationRoom": {
+        "next": [
+            "SimulationNormal",
+            "SimulationOverClock"
+        ]
+    },
+    "SimulationNormal": {
+        "recognition": "TemplateMatch",
+        "template": "simulation_normal.png",
+        "action": "Click",
+        "next": ["Arena"]
+    },
+    "SimulationOverClock": {
+        "recognition": "TemplateMatch",
+        "template": "simulation_overclock.png",
+        "action": "Click",
+        "next": ["Arena"]
+    },
+    "Arena": {
+        "next": [
+            "ArenaRookie",
+            "ArenaSpecial",
+            "ArenaChampion",
+            "AwardArena"
+        ]
+    },
+    "AwardArena": {
+        "recognition": "TemplateMatch",
+        "template": "arena_award.png",
+        "action": "Click",
+        "next": ["ArenaRookie"]
+    },
+    "ArenaRookie": {
+        "recognition": "TemplateMatch",
+        "template": "arena_rookie.png",
+        "action": "Click",
+        "next": ["ArenaSpecial"]
+    },
+    "ArenaSpecial": {
+        "recognition": "TemplateMatch",
+        "template": "arena_special.png",
+        "action": "Click",
+        "next": ["ArenaChampion"]
+    },
+    "ArenaChampion": {
+        "recognition": "TemplateMatch",
+        "template": "arena_champion.png",
+        "action": "Click",
+        "next": ["Tower"]
+    },
+    "Tower": {
+        "next": [
+            "TowerCompany",
+            "TowerUniversal"
+        ]
+    },
+    "TowerCompany": {
+        "recognition": "TemplateMatch",
+        "template": "tower_company.png",
+        "action": "Click",
+        "next": ["TowerUniversal"]
+    },
+    "TowerUniversal": {
+        "recognition": "TemplateMatch",
+        "template": "tower_universal.png",
+        "action": "Click",
+        "next": ["Interception"]
+    },
+    "Interception": {
+        "next": [
+            "InterceptionNormal",
+            "InterceptionAnomaly"
+        ]
+    },
+    "InterceptionNormal": {
+        "recognition": "TemplateMatch",
+        "template": "interception_normal.png",
+        "action": "Click",
+        "next": ["InterceptionAnomaly"]
+    },
+    "InterceptionAnomaly": {
+        "recognition": "TemplateMatch",
+        "template": "interception_anomaly.png",
+        "action": "Click",
+        "next": ["RegularReward"]
+    },
+    "RegularReward": {
+        "next": [
+            "OutpostDispatch",
+            "AffinityConsult",
+            "FriendshipPoints",
+            "MailClaim",
+            "MissionClaim",
+            "PassClaim",
+            "CoordinatedOperation",
+            "SoloRaidDaily"
+        ]
+    },
+    "OutpostDispatch": {
+        "recognition": "TemplateMatch",
+        "template": "outpost_dispatch.png",
+        "action": "Click",
+        "next": ["AffinityConsult"]
+    },
+    "AffinityConsult": {
+        "recognition": "TemplateMatch",
+        "template": "affinity_consult.png",
+        "action": "Click",
+        "next": ["FriendshipPoints"]
+    },
+    "FriendshipPoints": {
+        "recognition": "TemplateMatch",
+        "template": "friendship_points.png",
+        "action": "Click",
+        "next": ["MailClaim"]
+    },
+    "MailClaim": {
+        "recognition": "TemplateMatch",
+        "template": "mail_claim.png",
+        "action": "Click",
+        "next": ["MissionClaim"]
+    },
+    "MissionClaim": {
+        "recognition": "TemplateMatch",
+        "template": "mission_claim.png",
+        "action": "Click",
+        "next": ["PassClaim"]
+    },
+    "PassClaim": {
+        "recognition": "TemplateMatch",
+        "template": "pass_claim.png",
+        "action": "Click",
+        "next": ["CoordinatedOperation"]
+    },
+    "CoordinatedOperation": {
+        "recognition": "TemplateMatch",
+        "template": "coordinated_operation.png",
+        "action": "Click",
+        "next": ["SoloRaidDaily"]
+    },
+    "SoloRaidDaily": {
+        "recognition": "TemplateMatch",
+        "template": "solo_raid_daily.png",
+        "action": "Click"
+    }
+}

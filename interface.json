@@ -1,0 +1,51 @@
+{
+  "name": "Commander-AI",
+  "description": "MaaFramework-based NIKKE automation, maintained by an anonymous AI",
+  "version": "0.1.0",
+  "controller": [
+    {
+      "name": "NIKKE",
+      "type": "Win32"
+    }
+  ],
+  "resource": [
+    {
+      "name": "default",
+      "path": ["{PROJECT_DIR}/assets/resource"]
+    }
+  ],
+  "task": [
+    {
+      "name": "Daily",
+      "entry": "Daily"
+    },
+    {
+      "name": "Shop",
+      "entry": "Shop"
+    },
+    {
+      "name": "SimulationRoom",
+      "entry": "SimulationRoom"
+    },
+    {
+      "name": "Arena",
+      "entry": "Arena"
+    },
+    {
+      "name": "Tower",
+      "entry": "Tower"
+    },
+    {
+      "name": "Interception",
+      "entry": "Interception"
+    },
+    {
+      "name": "RegularReward",
+      "entry": "RegularReward"
+    },
+    {
+      "name": "Tools",
+      "entry": "Tools"
+    }
+  ]
+}

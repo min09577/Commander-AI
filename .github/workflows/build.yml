@@ -1,0 +1,99 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      version_override:
+        description: "Override version (e.g., v0.1.0)"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Extract Version
+        id: get_version
+        shell: pwsh
+        run: |
+          if ("${{ github.event.inputs.version_override }}" -ne "") {
+            $version = "${{ github.event.inputs.version_override }}"
+          } elseif ("${{ github.ref }}" -match "^refs/tags/v") {
+            $version = "${{ github.ref }}".Replace("refs/tags/", "")
+          } else {
+            $version = "v0.1.0-dev"
+          }
+          if (-not $version.StartsWith("v")) {
+            $version = "v$version"
+          }
+          echo "VERSION=$version" >> $env:GITHUB_OUTPUT
+          Write-Host "Version: $version"
+
+      - name: Package Assets
+        shell: pwsh
+        run: |
+          $version = "${{ steps.get_version.outputs.VERSION }}"
+          Compress-Archive -Path assets/* -DestinationPath "Commander-AI_$version.zip"
+          Write-Host "Package created: Commander-AI_$version.zip"
+
+      - name: Create Tag
+        uses: actions/github-script@v8
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const tag = '${{ steps.get_version.outputs.VERSION }}';
+            if (context.ref.startsWith('refs/tags/')) {
+              console.log(`Tag ${tag} already exists.`);
+            } else {
+              try {
+                await github.rest.git.createRef({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  ref: `refs/tags/${tag}`,
+                  sha: context.sha
+                });
+                console.log(`Tag ${tag} created.`);
+              } catch (e) {
+                if (e.message.includes('already exists')) {
+                  console.log(`Tag ${tag} already exists.`);
+                } else {
+                  throw e;
+                }
+              }
+            }
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.get_version.outputs.VERSION }}
+          name: Commander-AI ${{ steps.get_version.outputs.VERSION }}
+          body: |
+            ## Commander-AI ${{ steps.get_version.outputs.VERSION }}
+
+            MaaFramework-based NIKKE automation tool.
+
+            ### Installation
+            1. Install MaaFramework Runtime v2.0+
+            2. Extract this package to MaaFramework resource directory
+            3. Run with your preferred MaaFramework UI
+
+            ### Changes
+            - Initial release with full daily task pipeline
+            - Supports background operation
+            - Full resolution support
+          draft: false
+          prerelease: true
+          files: Commander-AI_${{ steps.get_version.outputs.VERSION }}.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
