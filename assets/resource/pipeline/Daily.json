@@ -13,9 +13,11 @@
     },
     "Login": {
         "recognition": "TemplateMatch",
-        "template": "login_shiftup_logo.png",
+        "template": "登录_扭蛋.png",
         "action": "DoNothing",
-        "next": ["Shop"]
+        "next": [
+            "Shop"
+        ]
     },
     "Shop": {
         "next": [
@@ -27,8 +29,13 @@
     },
     "ShopCash": {
         "recognition": "TemplateMatch",
-        "template": "shop_cash.png",
-        "roi": [0, 0, 1280, 720],
+        "template": "商店的图标.png",
+        "roi": [
+            0,
+            0,
+            1280,
+            720
+        ],
         "action": "Click",
         "next": [
             "ShopCashFree",
@@ -37,19 +44,23 @@
     },
     "ShopCashFree": {
         "recognition": "TemplateMatch",
-        "template": "shop_cash_free.png",
+        "template": "FREE.png",
         "action": "Click",
-        "next": ["ShopGeneral"]
+        "next": [
+            "ShopGeneral"
+        ]
     },
     "ShopCashFreePackage": {
         "recognition": "TemplateMatch",
-        "template": "shop_cash_free_stepup.png",
+        "template": "礼物的下半.png",
         "action": "Click",
-        "next": ["ShopGeneral"]
+        "next": [
+            "ShopGeneral"
+        ]
     },
     "ShopGeneral": {
         "recognition": "TemplateMatch",
-        "template": "shop_general.png",
+        "template": "左上角的百货商店.png",
         "action": "Click",
         "next": [
             "ShopGeneralFree",
@@ -59,26 +70,32 @@
     },
     "ShopGeneralFree": {
         "recognition": "TemplateMatch",
-        "template": "shop_general_free.png",
+        "template": "FREE.png",
         "action": "Click",
         "max_count": 2,
-        "next": ["ShopGeneralDust"]
+        "next": [
+            "ShopGeneralDust"
+        ]
     },
     "ShopGeneralDust": {
         "recognition": "TemplateMatch",
-        "template": "shop_general_dust.png",
+        "template": "芯尘盒.png",
         "action": "Click",
-        "next": ["ShopGeneralPackage"]
+        "next": [
+            "ShopGeneralPackage"
+        ]
     },
     "ShopGeneralPackage": {
         "recognition": "TemplateMatch",
-        "template": "shop_general_package.png",
+        "template": "简介个性化礼包.png",
         "action": "Click",
-        "next": ["ShopArena"]
+        "next": [
+            "ShopArena"
+        ]
     },
     "ShopArena": {
         "recognition": "TemplateMatch",
-        "template": "shop_arena.png",
+        "template": "竞技场商店的图标.png",
         "action": "Click",
         "next": [
             "ShopArenaBook",
@@ -89,31 +106,39 @@
     },
     "ShopArenaBook": {
         "recognition": "TemplateMatch",
-        "template": "shop_arena_book.png",
+        "template": "代码手册选择宝箱的图标.png",
         "action": "Click",
-        "next": ["ShopArenaBox"]
+        "next": [
+            "ShopArenaBox"
+        ]
     },
     "ShopArenaBox": {
         "recognition": "TemplateMatch",
-        "template": "shop_arena_code_box.png",
+        "template": "代码手册选择宝箱的图标.png",
         "action": "Click",
-        "next": ["ShopArenaPackage"]
+        "next": [
+            "ShopArenaPackage"
+        ]
     },
     "ShopArenaPackage": {
         "recognition": "TemplateMatch",
-        "template": "shop_arena_package.png",
+        "template": "简介个性化礼包.png",
         "action": "Click",
-        "next": ["ShopArenaFurnace"]
+        "next": [
+            "ShopArenaFurnace"
+        ]
     },
     "ShopArenaFurnace": {
         "recognition": "TemplateMatch",
-        "template": "shop_arena_furnace.png",
+        "template": "公司武器熔炉.png",
         "action": "Click",
-        "next": ["ShopRecycling"]
+        "next": [
+            "ShopRecycling"
+        ]
     },
     "ShopRecycling": {
         "recognition": "TemplateMatch",
-        "template": "shop_recycling.png",
+        "template": "废铁商店的图标.png",
         "action": "Click",
         "next": [
             "ShopRecyclingGem",
@@ -125,33 +150,43 @@
     },
     "ShopRecyclingGem": {
         "recognition": "TemplateMatch",
-        "template": "shop_recycling_gem.png",
+        "template": "珠宝.png",
         "action": "Click",
-        "next": ["ShopRecyclingVoucher"]
+        "next": [
+            "ShopRecyclingVoucher"
+        ]
     },
     "ShopRecyclingVoucher": {
         "recognition": "TemplateMatch",
-        "template": "shop_recycling_voucher.png",
+        "template": "黄色的礼物图标.png",
         "action": "Click",
-        "next": ["ShopRecyclingResources"]
+        "next": [
+            "ShopRecyclingResources"
+        ]
     },
     "ShopRecyclingResources": {
         "recognition": "TemplateMatch",
-        "template": "shop_recycling_resources.png",
+        "template": "资源的图标.png",
         "action": "Click",
-        "next": ["ShopRecyclingBox"]
+        "next": [
+            "ShopRecyclingBox"
+        ]
     },
     "ShopRecyclingBox": {
         "recognition": "TemplateMatch",
-        "template": "shop_recycling_teamwork_box.png",
+        "template": "团队合作宝箱图标.png",
         "action": "Click",
-        "next": ["ShopRecyclingArms"]
+        "next": [
+            "ShopRecyclingArms"
+        ]
     },
     "ShopRecyclingArms": {
         "recognition": "TemplateMatch",
-        "template": "shop_recycling_arms.png",
+        "template": "企业精选武装图标.png",
         "action": "Click",
-        "next": ["SimulationRoom"]
+        "next": [
+            "SimulationRoom"
+        ]
     },
     "SimulationRoom": {
         "next": [
@@ -161,15 +196,19 @@
     },
     "SimulationNormal": {
         "recognition": "TemplateMatch",
-        "template": "simulation_normal.png",
+        "template": "模拟室.png",
         "action": "Click",
-        "next": ["Arena"]
+        "next": [
+            "Arena"
+        ]
     },
     "SimulationOverClock": {
         "recognition": "TemplateMatch",
-        "template": "simulation_overclock.png",
+        "template": "模拟室超频_获得.png",
         "action": "Click",
-        "next": ["Arena"]
+        "next": [
+            "Arena"
+        ]
     },
     "Arena": {
         "next": [
@@ -181,27 +220,35 @@
     },
     "AwardArena": {
         "recognition": "TemplateMatch",
-        "template": "arena_award.png",
+        "template": "免费.png",
         "action": "Click",
-        "next": ["ArenaRookie"]
+        "next": [
+            "ArenaRookie"
+        ]
     },
     "ArenaRookie": {
         "recognition": "TemplateMatch",
-        "template": "arena_rookie.png",
+        "template": "方舟_竞技场.png",
         "action": "Click",
-        "next": ["ArenaSpecial"]
+        "next": [
+            "ArenaSpecial"
+        ]
     },
     "ArenaSpecial": {
         "recognition": "TemplateMatch",
-        "template": "arena_special.png",
+        "template": "晋级赛内部的应援.png",
         "action": "Click",
-        "next": ["ArenaChampion"]
+        "next": [
+            "ArenaChampion"
+        ]
     },
     "ArenaChampion": {
         "recognition": "TemplateMatch",
-        "template": "arena_champion.png",
+        "template": "左上角的竞技场.png",
         "action": "Click",
-        "next": ["Tower"]
+        "next": [
+            "Tower"
+        ]
     },
     "Tower": {
         "next": [
@@ -211,15 +258,19 @@
     },
     "TowerCompany": {
         "recognition": "TemplateMatch",
-        "template": "tower_company.png",
+        "template": "无限之塔的无限.png",
         "action": "Click",
-        "next": ["TowerUniversal"]
+        "next": [
+            "TowerUniversal"
+        ]
     },
     "TowerUniversal": {
         "recognition": "TemplateMatch",
-        "template": "tower_universal.png",
+        "template": "塔内的无限之塔.png",
         "action": "Click",
-        "next": ["Interception"]
+        "next": [
+            "Interception"
+        ]
     },
     "Interception": {
         "next": [
@@ -229,15 +280,19 @@
     },
     "InterceptionNormal": {
         "recognition": "TemplateMatch",
-        "template": "interception_normal.png",
+        "template": "拦截战.png",
         "action": "Click",
-        "next": ["InterceptionAnomaly"]
+        "next": [
+            "InterceptionAnomaly"
+        ]
     },
     "InterceptionAnomaly": {
         "recognition": "TemplateMatch",
-        "template": "interception_anomaly.png",
+        "template": "异常拦截_向右的箭头.png",
         "action": "Click",
-        "next": ["RegularReward"]
+        "next": [
+            "RegularReward"
+        ]
     },
     "RegularReward": {
         "next": [
@@ -253,49 +308,63 @@
     },
     "OutpostDispatch": {
         "recognition": "TemplateMatch",
-        "template": "outpost_dispatch.png",
+        "template": "派遣公告栏最左上角的派遣.png",
         "action": "Click",
-        "next": ["AffinityConsult"]
+        "next": [
+            "AffinityConsult"
+        ]
     },
     "AffinityConsult": {
         "recognition": "TemplateMatch",
-        "template": "affinity_consult.png",
+        "template": "咨询的图标.png",
         "action": "Click",
-        "next": ["FriendshipPoints"]
+        "next": [
+            "FriendshipPoints"
+        ]
     },
     "FriendshipPoints": {
         "recognition": "TemplateMatch",
-        "template": "friendship_points.png",
+        "template": "好友的图标.png",
         "action": "Click",
-        "next": ["MailClaim"]
+        "next": [
+            "MailClaim"
+        ]
     },
     "MailClaim": {
         "recognition": "TemplateMatch",
-        "template": "mail_claim.png",
+        "template": "领取.png",
         "action": "Click",
-        "next": ["MissionClaim"]
+        "next": [
+            "MissionClaim"
+        ]
     },
     "MissionClaim": {
         "recognition": "TemplateMatch",
-        "template": "mission_claim.png",
+        "template": "每日任务_MISSION.png",
         "action": "Click",
-        "next": ["PassClaim"]
+        "next": [
+            "PassClaim"
+        ]
     },
     "PassClaim": {
         "recognition": "TemplateMatch",
-        "template": "pass_claim.png",
+        "template": "通行证_奖励.png",
         "action": "Click",
-        "next": ["CoordinatedOperation"]
+        "next": [
+            "CoordinatedOperation"
+        ]
     },
     "CoordinatedOperation": {
         "recognition": "TemplateMatch",
-        "template": "coordinated_operation.png",
+        "template": "协同作战_捍卫者.png",
         "action": "Click",
-        "next": ["SoloRaidDaily"]
+        "next": [
+            "SoloRaidDaily"
+        ]
     },
     "SoloRaidDaily": {
         "recognition": "TemplateMatch",
-        "template": "solo_raid_daily.png",
+        "template": "单人突击_挑战.png",
         "action": "Click"
     }
 }

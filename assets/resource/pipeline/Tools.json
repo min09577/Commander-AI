@@ -8,19 +8,23 @@
     },
     "StoryMode": {
         "recognition": "TemplateMatch",
-        "template": "story_mode.png",
+        "template": "记录播放的播放.png",
         "action": "Click",
-        "next": ["InstantBurst"]
+        "next": [
+            "InstantBurst"
+        ]
     },
     "InstantBurst": {
         "recognition": "TemplateMatch",
-        "template": "instant_burst.png",
+        "template": "MAX.png",
         "action": "Click",
-        "next": ["CampaignMode"]
+        "next": [
+            "CampaignMode"
+        ]
     },
     "CampaignMode": {
         "recognition": "TemplateMatch",
-        "template": "campaign_mode.png",
+        "template": "推图_放大镜.png",
         "action": "Click"
     }
 }
