@@ -10,9 +10,9 @@ build/
 dist/
 *.exe
 
-# MaaFramework runtime
+# MaaFramework runtime (downloaded separately)
 MaaFramework/
-MaaAgentBinary/
+temp/
 
 # Debug
 debug/
