@@ -43,12 +43,12 @@
         ]
     },
     "ShopCashFree": {
-        "recognition": "TemplateMatch",
-        "template": "FREE.png",
+        "recognition": "OCR",
         "action": "Click",
         "next": [
             "ShopGeneral"
-        ]
+        ],
+        "expected": "FREE"
     },
     "ShopCashFreePackage": {
         "recognition": "TemplateMatch",
@@ -69,13 +69,13 @@
         ]
     },
     "ShopGeneralFree": {
-        "recognition": "TemplateMatch",
-        "template": "FREE.png",
+        "recognition": "OCR",
         "action": "Click",
         "max_count": 2,
         "next": [
             "ShopGeneralDust"
-        ]
+        ],
+        "expected": "FREE"
     },
     "ShopGeneralDust": {
         "recognition": "TemplateMatch",
@@ -219,12 +219,12 @@
         ]
     },
     "AwardArena": {
-        "recognition": "TemplateMatch",
-        "template": "免费.png",
+        "recognition": "OCR",
         "action": "Click",
         "next": [
             "ArenaRookie"
-        ]
+        ],
+        "expected": "免费"
     },
     "ArenaRookie": {
         "recognition": "TemplateMatch",
@@ -331,12 +331,12 @@
         ]
     },
     "MailClaim": {
-        "recognition": "TemplateMatch",
-        "template": "领取.png",
+        "recognition": "OCR",
         "action": "Click",
         "next": [
             "MissionClaim"
-        ]
+        ],
+        "expected": "领取"
     },
     "MissionClaim": {
         "recognition": "TemplateMatch",

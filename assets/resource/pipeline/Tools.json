@@ -15,12 +15,12 @@
         ]
     },
     "InstantBurst": {
-        "recognition": "TemplateMatch",
-        "template": "MAX.png",
+        "recognition": "OCR",
         "action": "Click",
         "next": [
             "CampaignMode"
-        ]
+        ],
+        "expected": "MAX"
     },
     "CampaignMode": {
         "recognition": "TemplateMatch",

@@ -152,6 +152,11 @@ def main():
     template_list = index['templates']
     
     # Load screenshot - ask which one
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--screen', type=int, default=1, help='Screenshot number (1-6)')
+    args = parser.parse_args()
+    
     screenshot_dir = "C:/Users/Min/.workbuddy/clipboard-images"
     screenshots = sorted([f for f in os.listdir(screenshot_dir) if f.startswith("clipboard-2026-06-17T17-1") and f.endswith('.jpg')])
     
@@ -159,17 +164,7 @@ def main():
         print("No screenshots found in clipboard directory!")
         sys.exit(1)
     
-    print("Available screenshots:")
-    for i, s in enumerate(screenshots):
-        print(f"  {i+1}. {s}")
-    
-    choice = input(f"\nSelect screenshot (1-{len(screenshots)}): ").strip()
-    try:
-        choice = int(choice) - 1
-        if choice < 0 or choice >= len(screenshots):
-            choice = 0
-    except:
-        choice = 0
+    choice = min(max(args.screen - 1, 0), len(screenshots) - 1)
     
     screenshot_path = os.path.join(screenshot_dir, screenshots[choice])
     current_screenshot = imread_cn(screenshot_path)
@@ -196,6 +191,11 @@ def main():
     rs = RectangleSelector(ax, onselect, useblit=True,
                           button=[1], minspanx=5, minspany=5,
                           spancoords='pixels', interactive=True)
+    
+    # Disable default matplotlib shortcuts (especially 's' for save)
+    plt.rcParams['keymap.save'] = ''
+    plt.rcParams['keymap.fullscreen'] = ''
+    plt.rcParams['keymap.quit'] = ''
     
     # Keyboard handler
     fig.canvas.mpl_connect('key_press_event', on_key)
